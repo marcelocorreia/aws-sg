@@ -11,7 +11,8 @@ galaxy_info:
     - all
   categories:
   - system
+  - development
   - cloud:ec2
-  - nerworking
+  - networking
 
 dependencies: []
