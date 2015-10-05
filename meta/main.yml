@@ -11,7 +11,7 @@ galaxy_info:
     - all
   categories:
   - system
-  - security
-  - AWS
+  - cloud:ec2
+  - nerworking
 
 dependencies: []
