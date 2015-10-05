@@ -1,0 +1,16 @@
+---
+- name: Kubernetes Security Group
+  ec2_group:
+    name: "{{item.sg_name}}"
+    description: "{{item.sg_description}}"
+    vpc_id: "{{item.sg_vpc_id}}"
+    region: "{{item.sg_region}}"
+    state: "{{item.sg_state}}"
+    rules: "{{item.sg_rules}}"
+    
+  register: sg_info
+  tags:
+    - AWS
+    - Network
+    - Security_Group
+  with_items: sg_list

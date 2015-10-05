@@ -1,0 +1,17 @@
+
+galaxy_info:
+  author: Marcelo Correia
+  company: StarVisitor
+  description: "Manages Security Groups at Amazon Web Services AWS"
+  min_ansible_version: 1.4
+  license: MIT
+  platforms:
+  - name: AWS
+    versions:
+    - all
+  categories:
+  - system
+  - security
+  - AWS
+
+dependencies: []
