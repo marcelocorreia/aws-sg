@@ -34,15 +34,15 @@ Requirements
           - proto: tcp
             from_port: 22
             to_port: 22
-            cidr_ip: 14.203.26.32/24
+            cidr_ip: 12.34.56.78/24
           - proto: tcp
             from_port: 22
             to_port: 22
-            cidr_ip: 10.100.0.0/16
+            cidr_ip: 10.1.0.0/16
           - proto: tcp
             from_port: 80
             to_port: 80
-            cidr_ip: 10.100.0.0/16
+            cidr_ip: 10.1.0.0/16
           # - proto: all
           #   group_name: "KubernetesSG"
       - sg_name: "Sandbox SG"
