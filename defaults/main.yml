@@ -1,7 +1,1 @@
 ---
-sg_name: required
-sg_description: required
-sg_vpc_id: optional
-sg_region: "ap-southeast-2"
-sg_rules: optional
-sg_state: optional

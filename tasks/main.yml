@@ -1,16 +1,20 @@
 ---
-- name: Kubernetes Security Group
+- name: Create Security group
   ec2_group:
-    name: "{{item.sg_name}}"
-    description: "{{item.sg_description}}"
-    vpc_id: "{{item.sg_vpc_id}}"
-    region: "{{item.sg_region}}"
-    state: "{{item.sg_state}}"
-    rules: "{{item.sg_rules}}"
-    
+    name: "{{ item.sg_name | default('my_sg') }}"
+    description: "{{ item.sg_description | default('My Security Group') }}"
+    state: "{{ item.sg_state | default('present') }}"
+    region: "{{ item.sg_region | default('ap-southeast-2') }}"
+    rules: "{{ item.sg_rules | default(none) }}"
+    rules_egress: "{{ item.rules_egress | default(none) }}"
+    aws_access_key: "{{ item.aws_access_key | default(none) }}"
+    aws_secret_key: "{{ item.aws_secret_key | default(none) }}"
+    ec2_url: "{{ item.ec2_url | default(none) }}"
+    profile: "{{ item.profile | default(none) }}"
+    purge_rules: "{{ item.purge_rules | default(true) }}"
+    purge_rules_egress: "{{ item.purge_rules_egress | default(true) }}"
+    security_token: "{{ item.security_token | default(none) }}"
+    validate_certs: "{{ item.validate_certs | default(true) }}"
+    vpc_id: "{{ item.vpc_id | default(none) }}"
   register: sg_info
-  tags:
-    - AWS
-    - Network
-    - Security_Group
   with_items: sg_list
